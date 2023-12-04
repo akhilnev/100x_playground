@@ -44,9 +44,9 @@ let m = 0;
 let s = 0;
 
 
-setInterval(clock, 1000);
+setInterval(termianlClock, 1000);
 
-function clock()
+function termianlClock()
 {
     s++;
     if(s == 60)
