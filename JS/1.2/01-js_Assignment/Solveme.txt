@@ -1,0 +1,4 @@
+
+SOLVING GUIDELINES:
+
+1. npx jest ./tests/<name>.js --> to run JS tests written for the solved problems!!
