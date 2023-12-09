@@ -53,4 +53,14 @@ int main(){
     Number z2 = z; // copy constructor CALLED HERE !!! ---> DEEP COPY CONSTRUCTOR , Z2 AND Z ARE INDEPENDENT !!
     z2.display();
 
+    try{
+        throw "hello";
+    }catch(char const* s){
+        cout << "Exception occurred" << endl;
+        cout << s << endl;
+    }
+
+  
+
+
 }
