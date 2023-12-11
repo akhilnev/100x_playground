@@ -22,6 +22,9 @@ class Shop{
 
 int main(){
     
+
+
+    
         int size = 3;
         Shop *ptr = new Shop[size];
         Shop *ptrTemp = ptr;
