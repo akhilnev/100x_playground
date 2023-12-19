@@ -44,6 +44,8 @@ let m = 0;
 let s = 0;
 
 
+
+
 setInterval(termianlClock, 1000);
 
 function termianlClock()
@@ -65,3 +67,7 @@ function termianlClock()
     }
     console.log(h + ":" + m + ":" + s);
 }
+
+// Make a terminal clock HH:MM:SS format ( PRETTY EASY WITH SET INTERVAL FORMAT )  ( END )
+
+
