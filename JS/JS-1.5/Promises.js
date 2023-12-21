@@ -30,7 +30,7 @@ function akhiReadfilePromise(){
     console.log("inside akhireadfilepromise");
     return new Promise(function(resolve){
         console.log("inside promise");
-        fs.readFile("a.txt", 'utf8', function(err, data){
+        fs.readFile("a.txt", 'utf8', function(err, data){ // Async logic added here 
             console.log("before resolve");
             resolve(data); // when done , call fn 
         }); // reads from a.txt and calls fn when done reading with data read 
@@ -65,3 +65,27 @@ d.then(Done());
 // first arguement is always function and second is resolving function, may be called direcrly or by using resolve keyword with .then() in the object call !
 
 // 3 STATES OF PROMISES : RESOLVED , REJECTED AND PENDING :
+
+
+// ASYNC AWAIT - INSTEAD OF .then() , we can use async await to wait for the promise to resolve and then assign the value to a variable
+
+function myAsyncfunc(){
+
+    let p = new Promise(function(resolve){
+        setTimeout(function(){
+            resolve("hi There")},3000);
+    })
+
+    return p;
+}
+
+
+async function caller(){
+
+    let data = await myAsyncfunc(); // await keyword is used to wait for the promise to resolve and then assign the value to data
+    console.log(data); // what is data value here ? 
+   
+}
+
+caller(); // prints second as caller is put on the call stack first but 3 second wait for myAsyncfunc to resolve and then print hi there
+console.log("after caller"); // prints first
