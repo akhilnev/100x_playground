@@ -68,5 +68,10 @@ WHAT HAPPENS IN GOOGLE.COM WHEN WE PRESS ENTER ? ( GOOGLE INTERVIEW QUESTION LOL
 
 8. How to create and expose my HTTP Server ?
 - HTTP ( NOT SECURE CANNOT EXTRACT DATA ) vs HTTPS ( SECURE CANT EXTRACT DATA )
-- 
+- HTTP API : Can be made by us!
+- We can write a HTTP Server in any language from C++ , JAVA , C , ETC
+- HERE WE WILL WRITE IT ON Node.js and using lib Express 
+- Express is a external library, helping us a create a HTTP Server !
+- CREATE A HTTP SERVER IN C/C++ TO TRY AND SEE EXCERCISE -> ORDERBOOK CHALLENGING BUT NODE.JS IS PRETTY EASY !
+- NOW WE CREATE THE HTTP SERVER BASIC PLEASE REFER TO CODE AND COMMENTS IN THE INDEX.JS while revision!!
 
