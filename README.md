@@ -1,2 +1,9 @@
 # 100x_playground
 My 100xdev Playground and learnings documented here!
+
+HIGH LEVEL OVERVIEW OF WHATS GOING ON:
+
+1. HTML CSS AND JS BASICS 
+2. WORKING WITH NODE.JS AND EXPRESS 
+3. BASH AND TERMINAL SCRIPTING
+
