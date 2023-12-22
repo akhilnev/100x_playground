@@ -89,3 +89,5 @@ async function caller(){
 
 caller(); // prints second as caller is put on the call stack first but 3 second wait for myAsyncfunc to resolve and then print hi there
 console.log("after caller"); // prints first
+
+

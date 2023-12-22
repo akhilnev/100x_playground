@@ -1,0 +1,72 @@
+Understanding Node.js and Express and working with it!
+
+1. ECMAScript - JS is based out of the same very different 
+
+2. JS - language conforming to the ECMAScript specifications 
+- JS has to include all ECMAScript specifications but can include external features like DOM 
+- Like WEB API's in JS but not in ECMAScript
+- Common JS Browser Engine Compilers : V8 from google chrome ( C ) and Spidermonkey from firefox ( RUST ) 
+- More on slides ( Figure for explanation )
+
+
+3. What is Node.js ? (and working with it)
+- v8 Engine pulled out with JS with additional functionality gave new runtime for JS called Node.js mainly used for the backend of applications ( web )
+- Written in C++
+
+4. What is Bun ?
+- Written in Zig much faster competitior , Zig is used for Low latency systems and is much faster  !!
+- Node.js runtime much slower than BUN
+- Bun is a different run time for faster runtime 
+- We will focus on Node.js but easily movable -> move to Bun eventually ( newer )
+
+5. What can we do with Node.js ?
+- Create CLI'S 
+- CREATE video players!
+- CREATE HTTP SERVERS!!! ( MAIN USE CASE )
+
+6. WHAT IS A HTTP SERVER ?
+
+- Protocol for machines to communicate !
+- WebRTC - another protocol for video communication betweem machines ( unrelated lol)
+- HTTP - most common way for frontend backend sides to communicate !
+- CSS/HTML/JS -> FRONTEND CODE 
+- Node.js -> Backend code + server ( with JS ) for Websites mainly 
+- Remeber Node.js is not a language it is a runtime 
+- HTTP Server is some code following a HTTP protocol !!
+- Need to deploy it for everyone to use it,else can be run locally 
+- Think of HTTP Server as a Function we call but in a remote system which throws out answer to us!
+
+7. More on HTTP Server in Node.js and communicating locally with it ? 
+- Writing HTTP Server analogous to functions but obv have their own specifications
+- Things include :
+1. Protocol : HTTP / HTTPS 
+2. URL OF BACKEND SERVER / IP / PORT
+3. ROUTE = AFTER MAIN BACKEND CODE 
+4. HEADERS , BODY AND QUERY PARAMS
+header: cookies or authentication like login WHICH tells the server that you are logged in or cookie stored to login automatically 
+body: ( what is text going on usually as a json)
+
+5. METHOD ( CRUD SPECIFY what to do , GET , POST , PUT , DELETE )
+
+- SERVER THEN RESPONDS!
+
+- RESPONSE:
+1. HEADERS : USUALLY ONLY WHILE SIGNING IN TO LIKE STORE INFORMATION OR STORE COOKIE RETURNED FOR AUTO SIGN IN ( NOT TOO FREQUENTLY SEEN)
+2. BODY : ANSWER TO WHAT YOU ASKED IS EXAMPEL 
+3. STATUS CODE : 200 OK ! , 404 NOT FOUND !
+
+WHAT HAPPENS IN GOOGLE.COM WHEN WE PRESS ENTER ? ( GOOGLE INTERVIEW QUESTION LOL)
+1. BROWSWER PARSES URL ENTERED TO GET WHICH SITE TO GO TO OR WHICH BACKEND SERVER TO HIT WITH WHICH ROUTE ETC 
+2. DNS ( DOMAIN NAME SERVICE ) LOOKUP ? -> convert google.com say to an IP -> WAY TO FIND A SERVER ON THE INTERNET ( UNIQUE NUMBER TO IDENTIFY A BACKEND SERVER ) -> ESTABLISHES CONNECTION ( COMPUTER NETWORKING ) -> HANDSHAKE OCCURS -> RESPONDS -> 
+3. SERVER GETS INPUT COMPUTES GIVES OUTPUT !
+4. 4 COMMON REQUESTS TO BACKEND SERVER -> GET, POST , PUT , DELETE ( DONE IN SWIPE HIRE ) OR CRUD OPERATIONS !
+5. server repsonse types:
+ - 200 : perfect 
+ - 404 : route not FOUND
+ - 403 : authentication cookie error , wrong cookie sent 
+ - 500: bug in backend or backend is crashed 
+
+8. How to create and expose my HTTP Server ?
+- HTTP ( NOT SECURE CANNOT EXTRACT DATA ) vs HTTPS ( SECURE CANT EXTRACT DATA )
+- 
+
