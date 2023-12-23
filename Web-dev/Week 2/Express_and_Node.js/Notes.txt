@@ -65,6 +65,7 @@ WHAT HAPPENS IN GOOGLE.COM WHEN WE PRESS ENTER ? ( GOOGLE INTERVIEW QUESTION LOL
  - 404 : route not FOUND
  - 403 : authentication cookie error , wrong cookie sent 
  - 500: bug in backend or backend is crashed 
+ - 411: input sent was wrong
 
 8. How to create and expose my HTTP Server ?
 - HTTP ( NOT SECURE CANNOT EXTRACT DATA ) vs HTTPS ( SECURE CANT EXTRACT DATA )
@@ -75,3 +76,13 @@ WHAT HAPPENS IN GOOGLE.COM WHEN WE PRESS ENTER ? ( GOOGLE INTERVIEW QUESTION LOL
 - CREATE A HTTP SERVER IN C/C++ TO TRY AND SEE EXCERCISE -> ORDERBOOK CHALLENGING BUT NODE.JS IS PRETTY EASY !
 - NOW WE CREATE THE HTTP SERVER BASIC PLEASE REFER TO CODE AND COMMENTS IN THE INDEX.JS while revision!!
 
+EXPRESS WITH REALWORLD EXAMPLES!
+
+- Going to doctor example ( Async function ) -> is really nice for Single Thread with Async vs Multi thread
+- How do I make a function which anyone around the world can use for a task -> USING A HTTP SERVER TO SHARE TO EVERYONE !!! , not by sharing functions lol!
+- Express -> JS , SpringBoot -> Java both help us make servers!!!
+- I can run various HTTP Servers ONLY ON DIFFERENT PORTS!! AS 2 DOCTORS CANNOT BE IN SAME ROOM TENDING TO PATIENTTS
+
+reaching code! -> port/?n=30 ( assuming n is used in Backend)
+
+Always send back a string inside the HTTP Server !!

@@ -1,0 +1,50 @@
+COMMON BASH COMMANDS:
+
+1. pwd: print working directory
+
+2. cd .. -> I folder back 
+
+3. cd -> into a folder inside a folder
+
+4. ls -> listing all files in a folder
+
+5. <tab> -> completes most similar folder with similar name 
+
+6. making new folder -> mkdir <fname>
+
+7. touch <fname> -> creates any file inside pwd
+
+8. cat <fname/relatve path>-> prints content of the file on the console, can also 
+
+9. vi -> vim commands:
+
+vi <fname> -> opens file on the console
+
+Press I INSERT MODE
+
+How to exit the file ? -> esc -> :q! ( enter ) -> escape vim without savinfg , :wq! -> for exiting after escaping !
+
+10. mv <FolderToBeMoved> <Newfolder> -> moving folders around
+
+11. cp <fileToBeCopied> FolderToBeMoved -> copying file to a different folder
+
+12. cp -r <foldertobeCopied> <foldertobemoved> -> recursively copying files from one folder to another 
+
+NODE RELATED COMMANDS used in upcoming vids + navgating Node.js:
+
+1. node -> gives shell where I can write JS code as node.js remember is a command shell
+
+2. Control C to get out of it
+
+3. node file.js -> runs the specific file ! ( very comfortable with to run the JS File and compile locally or on VS code)
+
+4. npm :
+
+- express for example is an external dependency, way to bring this in machine locally is npm install express !
+
+- npm install < dependency >
+
+-
+
+
+
