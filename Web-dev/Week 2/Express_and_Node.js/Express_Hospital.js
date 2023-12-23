@@ -62,6 +62,12 @@ app.delete("/",function(req,res){
     
     // delete all unhealtgy kidneys of the user !!
 
+    let checkforunhealthykidney = checkUnhealthy();
+
+    if(checkforunhealthykidney){
+        res.status(411).send("User has no unhealthy kidneys !!"); // sending status code useful for the front end at some point !!
+    }
+
     let newKidneyArray = [];
 
     for(let i = 0 ; i < users[0].kidneys.length ; i++){
@@ -75,4 +81,27 @@ app.delete("/",function(req,res){
     res.send("done");
 });
 
+function checkUnhealthy(){
+    for(let i = 0 ; i < users[0].kidneys.length ; i++){
+        if(!users[0].kidneys[i].healthy){
+            return false;
+        }
+    }
+    return true;
+}
+
 app.listen(3000,function(){console.log("Server started on port number : " + 3000)});
+
+// ONLY MAIN DIFFERENCE IN ENDPOINTS IS THAT WE COMMINICATE WITH A DATABASE INSTEAD OF AN INMEMPRY ARRAY !!
+
+// for url : http://localhost:3000/a.txt
+
+// ANOTHER EXSAMPLE OF READING A FILE FROM THE SERVER USING PARAMETER  !!
+app.get("/:filename",function(req,res){
+    let  filename = req.params.filename;
+    fs.readFile(filename, 'utf8', function(err, data){ // Async logic added here 
+        res.send(data);
+    });
+
+    res.send("done");
+});
