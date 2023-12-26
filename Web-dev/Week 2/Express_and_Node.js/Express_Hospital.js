@@ -41,7 +41,7 @@ res.send("replaced successfully !!");
 
 });
 
-app.use(express.json()); // need to do to access req.body ? 
+app.use(express.json()); // need to do to access req.body  ? 
 
 app.post("/",function(req,res){
 

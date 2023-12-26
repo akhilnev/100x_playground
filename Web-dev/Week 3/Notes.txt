@@ -1,0 +1,4 @@
+Middlewears, auth, global caches, zod
+
+- Before user actually hits backend 2 checks gen happen "auth check" and "input validation" check
+- Coding a Hospital with constrainsts and checks!
