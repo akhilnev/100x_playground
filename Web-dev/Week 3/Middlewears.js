@@ -79,7 +79,8 @@ const schema = z.object({
     password: app.string.min(5), // min 5 length 
     kidneyId: z.literal(1).or.literal(2) // exactly 1 or 2
 });
-// full schema checks for ful req.body in 1 go!!
+// full schema checks for ful req.body in 1 go and use response.success to check for true or false!!
+
 
 
 app.use(function(err,req,res,next){res.status(500).json({msg:"Sorry something is up"})}) // GLOBAL CACHES!! 

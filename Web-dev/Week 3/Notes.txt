@@ -1,11 +1,20 @@
-Middlewears, auth, global caches, zod
+Middlewears, global caches, zod, Authentication
 
 - Before user actually hits backend 2 checks gen happen "auth check" and "input validation" check
 - Coding a Hospital with constrainsts and checks!
+
+
 - // AUTH CHECK - USE Middlewears LOGIC WRITTEN IN THE CODE BEFORE 
 - // USERS CAN SEND RANDOM SHIT TO BREAK BACKEND AND TRY TO BREAK THE BACKEND BUT THAT NEEDS TO BE REGULATED - MANUAL INDUVIDUAL EDGE CASE HANDLONG OR ZOD LIBRARY FOR INPUT CHECKS CAN BE USED !!
     - to THIS use something called a global cache!! -> we write = app.use(function(err,req,res,next){res.json({msg:"Sorry something is up"})}) // always gets hit if an error occurs in any API endpoint we made!!
 
 - INPUT VALIDATION:
-    - HOW CAN WE USE ZOD TO DO INPUT VALIDATION ?? 
-    - 
+    - HOW CAN WE USE ZOD TO DO INPUT VALIDATION ??  ( LOOK AT SAMPLE CODE IN THE JS FILE!!)
+
+- AUTHENICATION:
+ - Till now in codebase we have been sending username and passwords in headers or body of the req - DUMB WAY
+ - Slightly better way :
+    - Using authorization we send Email and Password to server while loggin in, it sends back a unique token it generates  everytime the server is connected or logged on to it, 
+    - We use tokens as it would be too public to expose username with password in every request! -> This would be extremely dangerous 
+    - Thus we learn how to add tokens or authorization to out API endpoints next !
+
