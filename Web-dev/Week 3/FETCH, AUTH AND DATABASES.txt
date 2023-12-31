@@ -1,8 +1,9 @@
 
 FETCH, AUTH AND DATABASES(Mongo - DB) !!
-- Building a simple end to end project (Backend and Database project!
+- Building a simple end to end project (Backend and Database project!)
 
 1. FETCH API
+
 - Website helps us get Data from backend dynamically 
 - Create a simple HTML/ Front end code -> hitting backend data and retrieving names!
 - ( How to do the thing above ? )
@@ -12,12 +13,35 @@ FETCH, AUTH AND DATABASES(Mongo - DB) !!
         - We will next see how to put data and without button put data say on every reload -> using DOM
 
 2. AUTHENTICATION (STARTED WITH LAST NOTES)
+
 - Creating a dummy website where people can sign in and see data only if signed in!!
 - Woerking with how do we do Authenication in the same ?
 - Complicated way -> using external API calls say google , okta , etc
 - We will be doing basic Authenication on our own!!
-- Cryptography Jargon:
+
+- Cryptography Jargon: ( basic concept explanations! )
     - JSON Webtokens (most imp to understand):
-        -  
+        - Some hashing function taking in only JSONS -> Significatly diff from Hashing asnd Encryption
+        - Takes JSON input and gives out very long string called Token 
+        - Anyone with Token can login/look at contents ( can use GPT + jwt.io to see how to works)
+            - GPT uses JWT's to conevert
+        - Complex JSON -> (JWT.encode function + Password given) -> Token given out -> Token + Password(by dev/ head,not user) (verification done ( JWT.verify)) -> give out data 
+        - Not token can decoded by anyone, but we need the Passsord with developing compant to verify and give out data we need, thus even if someone decodes he wont get access to your data!!
     - Others:
-        1. Hashing: 
+        1. Hashing: Passwords hashed before storing, Single input to HF -> same function , for database breach cant see password exactly, can never guess or decrpyt back to passowrd
+            - How to validate actual password -> actual password re-coneverted to the gibberish -> This is how to works
+        2. Encryption: Hashing + back conversion allowed only if we have key access!
+            - Anyone with key can decrypt the the encrypted password
+
+- When we sign in a JWT Toke is sent to your local storage thus if we close tab and open again -> we dont need to resigin in the local storage token is used!!
+- Real world authenication example ^^
+
+Assignment: ( Creating simple Authenication Based  application !)
+- 2 Endpoints: 
+    1.POST /sign -in and return JSON with only username ( returns username encrypted token, to not expose any password)
+    2. GET, /users with Headers- Authheader to get list of usernames from backend DB if signed in/ token sent is right!!
+        - Else 403 error should be sent ( Access not allowed )
+
+
+        
+
