@@ -1,4 +1,4 @@
-Middlewears, global caches, zod, Authentication
+Middlewears, global caches,zod, Authentication
 
 - Before user actually hits backend 2 checks gen happen "auth check" and "input validation" check
 - Coding a Hospital with constrainsts and checks!
@@ -17,4 +17,6 @@ Middlewears, global caches, zod, Authentication
     - Using authorization we send Email and Password to server while loggin in, it sends back a unique token it generates  everytime the server is connected or logged on to it, 
     - We use tokens as it would be too public to expose username with password in every request! -> This would be extremely dangerous 
     - Thus we learn how to add tokens or authorization to out API endpoints next !
+
+
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // CAN WRITE ALL THE JS WE WANT HERE AND CALL THE FUNCTION WE CREATED BELOW!!
+        function getAnimalData() {
+            //alert("yo im running"); // check if function is running
+            fetch("https://fakerapi.it/api/v1/persons")
+            .then(function(response){
+                response.json() // not defined ?  
+                .then(function(finalData){
+                    console.log(finalData);
+                }) // also returns a promise thus we need to do a .then() to get the data
+                
+            }) 
+         } // working with an Asynchronous call here in JS to get and display data from the API
+    </script>
+    <button onclick = "getAnimalData()">getAnimalData</button>
+</body>
+</html>

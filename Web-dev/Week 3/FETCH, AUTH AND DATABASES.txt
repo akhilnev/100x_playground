@@ -1,0 +1,23 @@
+
+FETCH, AUTH AND DATABASES(Mongo - DB) !!
+- Building a simple end to end project (Backend and Database project!
+
+1. FETCH API
+- Website helps us get Data from backend dynamically 
+- Create a simple HTML/ Front end code -> hitting backend data and retrieving names!
+- ( How to do the thing above ? )
+    - Button + API getting hit method or code how to write ?
+    - Made with comments in ./frontend.html
+    - We havent put data on the screen yet -> related to DOM 
+        - We will next see how to put data and without button put data say on every reload -> using DOM
+
+2. AUTHENTICATION (STARTED WITH LAST NOTES)
+- Creating a dummy website where people can sign in and see data only if signed in!!
+- Woerking with how do we do Authenication in the same ?
+- Complicated way -> using external API calls say google , okta , etc
+- We will be doing basic Authenication on our own!!
+- Cryptography Jargon:
+    - JSON Webtokens (most imp to understand):
+        -  
+    - Others:
+        1. Hashing: 
