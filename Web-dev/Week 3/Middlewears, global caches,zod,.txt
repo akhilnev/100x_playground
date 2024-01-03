@@ -16,7 +16,12 @@ Middlewears, global caches,zod, Authentication
  - Slightly better way :
     - Using authorization we send Email and Password to server while loggin in, it sends back a unique token it generates  everytime the server is connected or logged on to it, 
     - We use tokens as it would be too public to expose username with password in every request! -> This would be extremely dangerous 
+    - Avg Process : Username and password sent to backend server, backend checks with DB and sends back a JWT if correct
+        -> Once JWT is sent it is stored on the front end -> Till we log out front end sends JWT to backend without resending username, password and backedn uses JWT (token) to validate 
     - Thus we learn how to add tokens or authorization to out API endpoints next !
+
+// BUILDING A SIMPLE WEBPPOINTS USING BASICS OF WHAT IS DISCUSSED ABOVE ^^ 
+
 
 
 

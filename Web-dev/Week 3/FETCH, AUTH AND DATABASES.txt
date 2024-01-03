@@ -35,6 +35,9 @@ FETCH, AUTH AND DATABASES(Mongo - DB) !!
 
 - When we sign in a JWT Toke is sent to your local storage thus if we close tab and open again -> we dont need to resigin in the local storage token is used!!
 - Real world authenication example ^^
+- jwt.sign({<what we need to encrypt>,jwtPassword})
+- const decoded = jwt.verify(token,password) -> (and then use) ->  decoded.username == username 
+
 
 Assignment: ( Creating simple Authenication Based  application !)
 - 2 Endpoints: 
