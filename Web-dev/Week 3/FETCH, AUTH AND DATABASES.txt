@@ -46,5 +46,23 @@ Assignment: ( Creating simple Authenication Based  application !)
         - Else 403 error should be sent ( Access not allowed )
 
 
+3. DATABSES: ( MONGO DB BASICS )
+- Backend server works with the database, using credentials of Each of them
+- User hits backend, backend hits database and thats how they communicate
+- Multiple kind of DB's
+    - Vector DB: AI/ML
+    - Graph DB: Very specific use
+    - NoSQL: Newer web used -> MONGODB ( CREATE DB, TABLES, CLOUD MAINTAINED)
+    - SQL: Most full stack
+
+MONGO DB AND NOSQL:
+- Can create DB'S , Scales well 
+- Schemaless! -> dont need to define the database schema ( units ) -> very strict in SQL like DB 
+- Mongo DB instance and connection URL ( Similar to COMS 363 )
+- 
+
+
+
+
         
 
