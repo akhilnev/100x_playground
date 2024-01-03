@@ -59,7 +59,32 @@ MONGO DB AND NOSQL:
 - Can create DB'S , Scales well 
 - Schemaless! -> dont need to define the database schema ( units ) -> very strict in SQL like DB 
 - Mongo DB instance and connection URL ( Similar to COMS 363 )
-- 
+
+NOTE:
+- We use Express to make HTTP Servers
+- jasonwebtokens helps us create JWT'S 
+- Mongoose library helps us connect Backend to Database 
+
+CONNECTING BACKEND TO DB : ( PROCESS )
+- We USE Mongoose Library to connect the backend database
+
+General Template for Mongoose connection and writing to MongoDB:
+
+            const mongoose = require("mongoose") // Along with npm install mongoose
+
+            mongoose.connect(<unique MONOGODB URL>)
+
+            const User = mongoose.model('Users',{name:String, email:String, ..}) // etc
+
+            const user = new User(....)
+
+            user.save(); // saves user in User DB
+
+
+
+
+
+
 
 
 
