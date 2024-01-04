@@ -1,0 +1,4 @@
+// DOM introduction = Document object model:
+-> DOM helps us get change add and delete HTML elements!
+-> DOM is a programming interface, and a tree like rep of our webpage!
+-> 
