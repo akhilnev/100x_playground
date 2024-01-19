@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const jwtPassword = "123456";
 
 mongoose.connect(
-  "your_mongo_url",
+  "mongodb+srv://akhilnev:Bang132003@cluster0.gl1kmna.mongodb.net/?retryWrites=true&w=majority",
 );
 
 const User = mongoose.model("User", {
@@ -13,12 +13,18 @@ const User = mongoose.model("User", {
   pasword: String,
 });
 
+const user = new User({ name: "Akhil", username: "akhilnev", password: "123" });
+
+user.save().then(() => console.log("User created"));
+
+
 const app = express();
 app.use(express.json());
 
 function userExists(username, password) {
   // should check in the database
 }
+
 
 app.post("/signin", async function (req, res) {
   const username = req.body.username;
@@ -30,7 +36,7 @@ app.post("/signin", async function (req, res) {
     });
   }
 
-  var token = jwt.sign({ username: username }, "shhhhh");
+  var token = jwt.sign({ username: username}, jwtPassword); // encoding the username in the token, which is later decoded to get the username and check 
   return res.json({
     token,
   });
@@ -44,14 +50,29 @@ app.get("/users", function (req, res) {
     // return a list of users other than this username from the database
   } catch (err) {
     return res.status(403).json({
-      msg: "Invalid token",
+      msg: "Invalid token - please log in again",
     });
   }
 });
 
 app.post("/signup", function(req,res){
 
+  const username = req.body.username;
+  const password = req.body.password;
+  const name = req.body.name;
 
+  const userExists = User.findOne({username: username});
+  if(userExists){
+    return res.status(403).json({"message": "User already exists"});
+  }
+  // ideally also send an email to verify the user and if email belongs to the user or not -> not tough w=but will learn later on
+
+  const user = new User({name, username, password});
+  user.save();  
+
+  return res.json({
+    "message": "User created successfully"
+  });
 
 })
 
