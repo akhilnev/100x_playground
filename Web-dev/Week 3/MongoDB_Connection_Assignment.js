@@ -63,12 +63,12 @@ app.post("/signup", function(req,res){
 
   const userExists = User.findOne({username: username});
   if(userExists){
-    return res.status(403).json({"message": "User already exists"});
+    return res.status(403).json({"message": "User already exists, please login"}); // 403 means forbidden request
   }
   // ideally also send an email to verify the user and if email belongs to the user or not -> not tough w=but will learn later on
 
-  const user = new User({name, username, password});
-  user.save();  
+  const user = new User({name, username, password}); // this is the user object that will be saved in the database
+  user.save();  // this will save the user in the database
 
   return res.json({
     "message": "User created successfully"
