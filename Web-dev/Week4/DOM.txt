@@ -1,3 +1,14 @@
 - Most notes needed are now attached with the lecture -> only much needed or very important notes I will be writing here ! 
 - Document exists outside the standard JS spec in the Browswe JS ( external spec )
 - We dont use DOM too much once we start working with React, but React under the hood is basically using DOM so good to know and at times we may need to work with the same! 
+
+TO HIT LOCAL MADE BACKEND ADD THE FOLLOWING !! :
+
+npm install cors --save
+
+and,
+
+const cors = require('cors');
+const express = require('express');
+const app = express();
+app.use(cors());

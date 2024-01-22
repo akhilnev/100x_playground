@@ -31,7 +31,8 @@
         // SAY THE BELOW IS NOT ALLOWED AND WE NEED TO HIT AN ENDPOINT ON THE BACKEND -> USING FETCH !! 
         //element.innerHTML = parseInt(a) + parseInt(b); // this will change the content of the div and add Hello there to the webiste 
         // FETCH IS ASYNC CALL THUS .then() is used
-        fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b).
+        // fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b).
+        fetch("http://localhost:3000/sum?a="+a+"&b="+b).
         then(function(response){
             // we know response is a text object ( res.send ( "Answer " ) ))
             // Unfortuanely this is also a async call thus we need to use .then() again
