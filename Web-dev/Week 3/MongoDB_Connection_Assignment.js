@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const jwtPassword = "123456";
 
 mongoose.connect(
-  "mongodb+srv://akhilnev:Bang132003@cluster0.gl1kmna.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://akhilnev:wzNhM4etH8W1ByI9@cluster0.d4pni82.mongodb.net/MyTrialDB?retryWrites=true&w=majority",
 );
 
 const User = mongoose.model("User", {
@@ -13,9 +13,11 @@ const User = mongoose.model("User", {
   pasword: String,
 });
 
-const user = new User({ name: "Akhil", username: "akhilnev", password: "123" });
+// BELOW IS SAMPLE USER CREATION TO TEST IF WE ARE SENDING THE DATA TO THE DATABASE OR NOT
 
-user.save().then(() => console.log("User created"));
+//const user = new User({ name: "Akhil", username: "akhilnev", password: "123" });
+
+//user.save().then(() => console.log("User created"));
 
 
 const app = express();
@@ -55,13 +57,17 @@ app.get("/users", function (req, res) {
   }
 });
 
-app.post("/signup", function(req,res){
+// findone in JS is a promise, so we can use await ( NEED TO OR ELSE IT WILL GIVE ERROR/ WONT WORK AS DESIRED )
+// If we dont use await, then it will return a promise and not the actual value
+// promist is treated as true thus we always get user exists which is WRONG 
+
+app.post("/signup", async function(req,res){
 
   const username = req.body.username;
   const password = req.body.password;
   const name = req.body.name;
 
-  const userExists = User.findOne({username: username});
+  const userExists = await User.findOne({username: username});
   if(userExists){
     return res.status(403).json({"message": "User already exists, please login"}); // 403 means forbidden request
   }
