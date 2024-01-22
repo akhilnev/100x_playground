@@ -5,6 +5,7 @@ const jwtPassword = "123456";
 
 mongoose.connect(
   "mongodb+srv://akhilnev:wzNhM4etH8W1ByI9@cluster0.d4pni82.mongodb.net/MyTrialDB?retryWrites=true&w=majority",
+  //mongodb+srv://akhilnev:wzNhM4etH8W1ByI9@cluster0.d4pni82.mongodb.net/<ToFillinDBName>?retryWrites=true&w=majority
 );
 
 const User = mongoose.model("User", {

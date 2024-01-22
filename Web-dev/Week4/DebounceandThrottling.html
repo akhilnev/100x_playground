@@ -1,0 +1,93 @@
+<!-- WHENEVER WE TYPE SOMETHING IN THE INPUT BOXES AND CLICK THE BUTTON, THE SUM IS CALCULATED AND DISPLAYED IN THE DIV BOX BELOW -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2boxhtmlDOM</title>
+</head>
+<style>
+    .container{
+        background-color: red;
+        border: 2px solid black;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding-top: 50px;
+    }
+</style>
+<script>
+    // HITTING A BACKEND SERVER USING FETCH AND ALSO WIRITIG IT UP FOR PRACTICE QUICKLY!!
+    let timeout = null; // intially no value but later given some timeout value -> like amazon does while searching for products ! 
+
+    function debouncedDiv(){
+        // clear old clock and start a new one verytime debpounced clock is called !!
+        clearTimeout(timeout);
+        timeout = setTimeout(populateDiv(), 100);
+        clearTimeout(timeout);
+    }
+
+    function populateDiv(){
+        //alert("Hi there");
+        // need to dynamically add the result using JS and Document Object Model -> external JS 
+        const element = document.getElementById("finalsum"); // this will get the div with id finalsum
+        const a = document.getElementById("input1").value; // this will get the value of input1
+        const b = document.getElementById("input2").value; // this will get the value of input2
+        //console.log(element); // this element is a div which will get logged to the console -> DOM object
+
+        // SAY THE BELOW IS NOT ALLOWED AND WE NEED TO HIT AN ENDPOINT ON THE BACKEND -> USING FETCH !! 
+        //element.innerHTML = parseInt(a) + parseInt(b); // this will change the content of the div and add Hello there to the webiste 
+        // FETCH IS ASYNC CALL THUS .then() is used
+        fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b).
+        then(function(response){
+            // we know response is a text object ( res.send ( "Answer " ) ))
+            // Unfortuanely this is also a async call thus we need to use .then() again
+            response.text().
+            then(function(answer){
+                document.getElementById("finalsum").innerHTML = answer; // logs answer in the backend into the div
+            })
+
+        }) 
+    }
+
+    // cleaner way to do the same:
+    async function getSumCleaner(){
+
+        const a = document.getElementById("input1").value; // this will get the value of input1
+        const b = document.getElementById("input2").value; // this will get the value of input2
+
+        const repsonse = await fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b);
+        const answer = await response.text(); // 2 promises thus 2 awaits
+        document.getElementById("finalsum").innerHTML = answer ;    
+
+    }
+    // say we dont have access to this function on the frontend and we need to call it from the backend
+    // hit a backend server! 
+    // we need to make an API call to the backend server and get the result from there
+    
+</script>
+<body>
+    
+    <input type="text" oninput ="debouncedDiv()" id="input1" placeholder="Enter Number 1"></input>
+    <!-- // add space between input and button -->
+    <br></br>
+    <input type="text" oninput ="debouncedDiv()" id="input2" placeholder="Enter Number 2"></input>
+    <br></br>
+    <div id="finalsum"> </div>
+    <!-- Making this dynamic like calculating sum and putting on screen is dynamic and hard-->
+    <!-- Thus we use DOM and React -->
+
+
+    <!-- SAY WE WANT TO SEND REQUEST ONLY IF USER IS TYPING SLOWLY NOT IF HE IS TYPING REALLY FAST!!!
+    WE USE DEBOUNCING AND THROTTLING FOR THIS PURPOSE -->
+
+
+
+
+  
+
+</body>
+</html>

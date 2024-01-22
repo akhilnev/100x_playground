@@ -1,0 +1,4 @@
+- Most notes needed are now attached with the lecture -> only much needed or very important notes I will be writing here ! 
+- Document exists outside the standard JS spec in the Browswe JS ( external spec )
+
+
