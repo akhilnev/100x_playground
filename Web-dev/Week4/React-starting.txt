@@ -1,0 +1,10 @@
+npm create vite@latest -> gives React framework installed folder
+1. Folder name
+2. JS ( CHOOSE )
+
+React -> is a difference caluclating framework between states 
+React DOM -> Takes care of DOM Manipulation
+
+npm install -> what does this do ? 
+
+npm run dev -> 

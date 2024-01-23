@@ -1,0 +1,68 @@
+
+<!-- CREATING A TO-DO LIST ( DYNAMIC HTML) -> USING PLAIN DOM-MANIPULATION AND NO REACT ( MUCH EASIER!)
+UNDERSTANDING WHY REACT IS ACTUALLY HELPFUL AND TRYING TO MIMIC WHAT REACT DOES USING PLAIN DOM MANIPULATION -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+  <button onclick="addTodo()">Add todo</button>
+
+  <div id="todos">
+  </div>
+
+  <script>
+    let globalId = 1;
+
+    function markAsDone(todoId) {
+      const parent = document.getElementById(todoId);
+      parent.children[2].innerHTML = "Done!"
+    }
+
+    function createChild(title, description, id) {
+      const child = document.createElement("div");
+      const firstGrandParent = document.createElement("div");
+      firstGrandParent.innerHTML = title;
+      const secondGrandParent = document.createElement("div");
+      secondGrandParent.innerHTML = description;
+      const thirdGrandParent = document.createElement("button");
+      thirdGrandParent.innerHTML = "Mark as done";
+      thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+      child.appendChild(firstGrandParent);
+      child.appendChild(secondGrandParent);
+      child.appendChild(thirdGrandParent)
+      child.setAttribute("id", id);
+      return child;
+    }
+    function addTodo() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const parent = document.getElementById("todos");
+
+      parent.appendChild(createChild(title, description, globalId++));
+    }
+
+    function updateDomAccToState(state){
+        document.getElementById("todos").innerHTML = ""; // clear it and when called assign everything in the state to the page 
+        for(let i = 0; i < state.length; i++){
+            const todo = state[i]; // make a const todo = state[i] and then use todo.title, todo.description, todo.id
+            const child = createChild(todo.title, todo.description, todo.id);
+            document.getElementById("todos").appendChild(child);
+        }
+    }
+    // every 5 seconds check with the backend for upddated data and call the update function:
+
+    setInterval(async function(){
+        const resp = await fetch("<url of backend>");
+        const json = await resp.json();
+        updateDomAccToState(json.todos); // check with the network 
+    },5000) // every 5 seconds we hit the backend and update the dom using the function!! 
+    
+  </script>
+</body>
+</html>

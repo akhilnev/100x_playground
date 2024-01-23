@@ -1,0 +1,16 @@
+-> Foundation in React class ( DSA heavy and 4.2 notes using ) 
+-> Slides at: https://shorturl.at/iCLO6
+
+DOM Manipulation -> Adding HTML inside page through JS ! ( Using DOM ) -> very tough 
+-> Now React VUE makes it easier to do it! 
+-> making a complex DOM application and seeing how hard it is to make dynamic websites!
+
+-> simple appending will not work in an actual Full-stack app as we cannot support a mobile + web app which has constant changes on both the ends 
+
+NEXT TASK:
+-> P2 : Take a state from backend and render it on the web app and vice versa update state as we change on the web - app
+
+UPDATED CODE BASED : https://shorturl.at/yFTX1
+
+-> Note in react while getting the new state rendered (difference is calculated!! ) -> not full thing replaced
+-> Assignment implements the same!! 
