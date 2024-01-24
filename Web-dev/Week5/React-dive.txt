@@ -1,0 +1,55 @@
+https://shorturl.at/cjvMU -> 5.1 notes 
+
+1. Foundational React Class notes and Jargon in 5.1 
+2. Dont need React for static websites at all! -> HTML Not changing 
+3. We need Reat for DOM Manipulation ( Week 4) -> to make it easier rather than coding alot to do the same! 
+
+Why React?
+-> Very tough to write DOM Manipulation code in HTML/CSS/JS plain -> thus we make React making it easy 
+-> Facebook making a huge website -> made React to simplify stuff -> made OpenSource 
+
+STATE AND COMPONENTS -> 2 MAIN THINGS IN REACT ( ALL FRONT END FRAMEWORKS ARE BASED ON THIS! )
+
+State -> JS object representing dynamic things in the app ( ONLY DYNAMIC )
+
+1 State can have multiple components -> HTML Snippet showing current State values ( Linkedin Top - Bar )
+
+Re-rendering -> When a component in a state changes -> re-rendering occurs when backend changes component value!
+
+We need to:
+
+1. Define State of application 
+
+2. Update State of application or components inside the state 
+
+3. React takes care of the re-rendering part ( no need to write DOM logic for the same! )
+
+Example making a state and component for count button with increasing value: ( SHIFTING TO REACT FROM DOM! )
+
+State :
+{
+    count : 0 
+}
+
+Component:
+
+function buttonComponent(count){
+    return (
+    <div>
+        // button with onclick function increasing count in the state! 
+    </div>
+    )
+}
+
+Array Destructuring: ( In JS for React Syntax )
+
+let arr = [1,2]
+
+const [a,b] = arr // pattern macthed or array Destructuring!
+
+npm run build -> converts react code to HTML/CSS/JS of our current app and we can just host that if we need and dont need our React multiple folders yet! 
+
+
+
+https://shorturl.at/doqX8 ( HK CODE FOR THE TODO LIST )
+

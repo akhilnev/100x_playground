@@ -7,9 +7,8 @@ function App() {
   // function returning html wtf is this
   // jsx is combination of HTML and JS 
   const [count, setCount] = useState(0) // this is how we define a state-variable in react!!
-
   return (
-    <div >
+    <div>
         <button onClick={function(){setCount
         ((count) => count + 1)}
           }>

@@ -7,4 +7,5 @@ React DOM -> Takes care of DOM Manipulation
 
 npm install -> what does this do ? 
 
-npm run dev -> 
+npm run dev -> to get the React App running 
+
